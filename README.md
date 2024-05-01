@@ -1,9 +1,20 @@
 # 소품샵 토이 프로젝트
 
+## 실행 방법 (clone 받은 프로젝트 경로 기준)
+1. jar 배포파일 생성
+   - (windows OS) ./gradlew.bat clean build 
+   - (mac OS) ./gradlew clean build
+2. jar 배포파일 실행 
+   - java -jar .\build\libs\sopoomshop-0.0.1-SNAPSHOT.jar
+
+## 유의 사항
+- 실행 시 [JDK 21](https://www.oracle.com/kr/java/technologies/downloads/#java21) 이 권장됨 
+- 서버 인메모리 DB 를 사용했기 때문에 서버 재기동 시 저정한 데이터가 휘발됨
+
 ## 테이블 다이어그램
 <img src="./readme/dbDiagramSopoomshop.png">
 
-## 화면 구성도
+## 화면 및 요청 스펙
 ### 1. [메인화면](src/main/resources/templates/main.html) (/)
 <img src="./readme/main.png">
 
