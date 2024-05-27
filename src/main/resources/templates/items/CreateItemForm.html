@@ -24,7 +24,7 @@
             <br>
         </div>
         <div class="button-box">
-            <button class="btn-1" type="button" value="submit" onclick="checkBeforeSubmit()">등록</button>
+            <button class="btn-1" type="button" value="submit" onclick="return checkBeforeSubmit()">등록</button>
         </div>
     </form>
     
@@ -73,9 +73,10 @@
         function checkBeforeSubmit() {
             if (checkNull()) {
                 if (checkSalePrice()) {
-                    document.Createitem.submit();
+                    return true;
                 }
             }
+            return false;
         };
     </script>
 </body>

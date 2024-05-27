@@ -28,7 +28,7 @@
         <p><span class="class1"id="price" name="price" style="text-align: center;">총 &nbsp;금액 : 원 </span></p>  
 
         <br>
-            <button class="btn-1" type="submit" value="submit" onclick=" checkBeforeSubmit()">등록</button>
+            <button class="btn-1" type="submit" value="submit" onclick="return checkBeforeSubmit()">등록</button>
         <br>
         
     </form>
@@ -128,9 +128,10 @@
         function checkBeforeSubmit() {
             if (checkNull()) {
                 if (checkQuantity()) {
-                    document.Createorder.submit();
+                    return true;
                 }
             }
+            return false;
         }
     </script>
    

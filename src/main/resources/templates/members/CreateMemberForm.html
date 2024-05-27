@@ -20,7 +20,7 @@
         <p><span class="span1">주소</span> <input id="address" type="text" name="address" placeholder="주소" minlength="4" maxlength="10"></p>
         <p><span>전화번호</span><input id="phone" type="text" name="phone" placeholder="000-0000-0000" minlength="13" maxlength="13" oninput="autoHyphen(this)"/></p>
         <br>
-        <button class="btn-1" type="button" value="submit" onclick="checkNull()"; >등록</button>
+        <button class="btn-1" type="button" value="submit" onclick="return checkNull()"; >등록</button>
         <br>
     </form>
     
@@ -40,9 +40,9 @@
 
             if(name == "" || address =="" || phone == "" ) {
                 alert('필수 값을 입력하십시오');
-                return;
+                return false;
             }
-            document.Createmember.submit();
+            return true;
         }; 
     </script> 
 </body>
