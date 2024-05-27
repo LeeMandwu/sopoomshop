@@ -132,50 +132,6 @@
                 }
             }
         }
-
-
-        // json 형식으로 데이터가져오기 //
-        var messages = "[[${orders}]]";
-	    var jsonMessage = messages.replace(/&quot;/g, "\""); // 서버랑 웹페이지랑 JSON 양식이 달라서 맞춰줌
-
-        jsonfunc(jsonMessage); // JSON 을 파싱해서 HTML 로 표현함
-
-        function jsonfunc( jsonText ) {
-            let arrname = new Array(); // 상품명 배열
-            let arrsalePrice = new Array(); // 판매가 배열
-            let arrstock = new Array(); // 재고수량 배열
-
-            let json = JSON.parse(jsonText); // JSON 형식으로 뽑아서 객체화
-
-            for (i=0; i< json.length; i++) {
-                console.log(i + "번째 데이터");
-                console.log(json[i]);
-
-                arrname[i] = json[i].name;
-                arrsalePrice[i] = json[i].salePrice;
-                arrstock[i] = json[i].stock;
-            }
-        }
-
-
-        // json 형식으로 자료보내기 // 
-        const Createorder = document.querySelector('.form') 
-
-        Createorder.addEventListener('submit', event => {
-            event.preventDefault();
-            const CreateOrderData = new CreateOrderData(Createorder);
-            const data = Object.fromEntries(CreateOrderData);
-            fetch("/orders/create-order", {
-                method : 'post',
-                headers : {
-                    "Content-Type" : "application/json"
-                },
-                body : JSON.stringify(data),
-            })
-            .then(res => res.json())
-            .then(data => console.log(data))
-            .catch(error => console.log(error))
-    });
     </script>
    
 </body>

@@ -76,26 +76,7 @@
                     document.Createitem.submit();
                 }
             }
-        }
-
-        // json 형식으로 자료보내기 // 
-        const Createitem = document.querySelector('.form') 
-
-        Createitem.addEventListener('submit', event => {
-            event.preventDefault();
-            const CreateItemData = new CreateItemData(Createitem);
-            const data = Object.fromEntries(CreateItemData);
-
-        fetch("/items/create-item", {
-            method : 'get',
-            headers : {
-                "Content-Type" : "application/json"
-            },
-            body : JSON.stringify(data),
-        }).then(res => res.json())
-          .then(data => console.log(data))
-          .catch(error => console.log(error))
-    });
+        };
     </script>
 </body>
 </html>
