@@ -29,7 +29,7 @@ public class OrderController {
         model.addAttribute("form", new OrderForm());
         model.addAttribute("members", JsonTransform.getJsonString(memberService.findAll()));
         model.addAttribute("items", JsonTransform.getJsonString(itemService.findAll()));
-        return "orders/createOrderForm";
+        return "orders/CreateOrderForm";
     }
 
     @PostMapping("/orders/create-order")
@@ -46,7 +46,7 @@ public class OrderController {
     public String list(Model model) {
         List<OrderResultDto> orders = orderService.findAll();
         model.addAttribute("orders", JsonTransform.getJsonString(orders));
-        return "orders/orderList";
+        return "orders/OrderList";
     }
 
 }

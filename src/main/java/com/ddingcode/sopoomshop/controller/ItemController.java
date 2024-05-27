@@ -22,7 +22,7 @@ public class ItemController {
     @GetMapping("/items/new")
     public String createForm(Model model) {
         model.addAttribute("form", new ItemForm());
-        return "items/createItemForm";
+        return "items/CreateItemForm";
     }
 
     @PostMapping("/items/create-item")
@@ -41,7 +41,7 @@ public class ItemController {
     public String list(Model model) {
         List<Item> items = itemService.findAll();
         model.addAttribute("items", JsonTransform.getJsonString(items));
-        return "items/itemList";
+        return "items/ItemList";
     }
 
 }

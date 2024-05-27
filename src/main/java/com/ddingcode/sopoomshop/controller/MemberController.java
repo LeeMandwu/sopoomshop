@@ -23,7 +23,8 @@ public class MemberController {
     @GetMapping("/members/new")
     public String createForm(Model model) {
         model.addAttribute("form", new MemberForm());
-        return "members/createMemberForm";
+        log.info("member createForm");
+        return "members/CreateMemberForm";
     }
 
     @PostMapping("/members/create-member")
@@ -40,7 +41,7 @@ public class MemberController {
     public String list(Model model) throws JsonProcessingException {
         List<Member> members = memberService.findAll();
         model.addAttribute("members", JsonTransform.getJsonString(members));
-        return "members/memberList";
+        return "members/MemberList";
     }
 
 }
