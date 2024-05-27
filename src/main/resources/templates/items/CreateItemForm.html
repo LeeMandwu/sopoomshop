@@ -56,10 +56,13 @@
 
         // 판매가 조건 (onClick)
         function checkSalePrice(){
-            const sale = document.getElementById('sale').value;
-            const buy = document.getElementById('buy').value;
+            let sale = document.getElementById('sale').value;
+            let buy = document.getElementById('buy').value;
 
-            if(buy >= sale || buy == "" || sale =="") {
+            let saleNum = Number(sale);
+            let buyNum = Number(buy);
+
+            if(buyNum >= saleNum || buyNum == "" || saleNum =="") {
                 alert('판매가는 매입가보다 커야합니다.');
                 return false;
             }
